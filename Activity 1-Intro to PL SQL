@@ -1,9 +1,0 @@
-DECLARE 
-    book_title VARCHAR2(50) := 'The Secret Garden'; 
-    author_name VARCHAR2(50) := 'Frances Hodgson Burnett'; 
-    copies NUMBER := 2; 
-BEGIN 
-    DBMS_OUTPUT.PUT_LINE('Book Title: ' || book_title || ', Author: ' || author_name || ', Copies: ' || copies); 
-END;
-Statement processed.
-Book Title: The Secret Garden, Author: 

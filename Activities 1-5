@@ -1,0 +1,94 @@
+#Activity 1
+
+DECLARE
+    card_name VARCHAR2(50) := 'Michael Jordan 1997 Fleer Ultra';
+    player_name VARCHAR2(50) := 'Michael Jordan';
+    year NUMBER := 1997;
+    quantity NUMBER := 3;
+    condition VARCHAR2(30) := 'Near Mint';  -- New detail added
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Card Name: ' || card_name || 
+                         ', Player Name: ' || player_name || 
+                         ', Year: ' || year || 
+                         ', Quantity Owned: ' || quantity ||
+                         ', Condition: ' || condition);  -- Displaying the new detail
+END;
+
+#Activity 2
+
+DECLARE
+    monthly_savings NUMBER := 20;
+    months NUMBER := 5;
+    total_savings NUMBER;
+BEGIN
+    total_savings := monthly_savings * months;
+    DBMS_OUTPUT.PUT_LINE('After ' || months || ' months, you have saved a total of $' || total_savings || '.');
+END; 
+
+
+
+#Activity 3
+
+DECLARE
+    allowance NUMBER := 20;
+    item_cost NUMBER := 15;
+BEGIN
+    IF allowance >= item_cost THEN
+        DBMS_OUTPUT.PUT_LINE('You can buy the item!');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('You do not have enough allowance.');
+    END IF;
+END;
+
+
+#Activity 4
+
+CREATE TABLE friends (
+    friend_id NUMBER,
+    friend_name VARCHAR2(50),
+    game_name VARCHAR2(50),
+    friend_since NUMBER
+);
+
+INSERT INTO friends (friend_id, friend_name, game_name, friend_since) VALUES (1, 'Jace', 'Fortnite', 2020);
+INSERT INTO friends (friend_id, friend_name, game_name, friend_since) VALUES (2, 'Venize', 'Minecraft', 2019);
+INSERT INTO friends (friend_id, friend_name, game_name, friend_since) VALUES (3, 'Aya', 'Among Us', 2021);
+
+SELECT * FROM friends;
+
+UPDATE friends SET game_name = 'Roblox' WHERE friend_name = 'Aya';
+
+DELETE FROM friends WHERE friend_name = 'Venize';
+SELECT friend_name FROM friends WHERE game_name = 'Fortnite';
+SELECT friend_name, friend_since FROM friends;
+
+
+
+#Activity 5
+
+CREATE TABLE pets (
+    pet_id NUMBER,
+    pet_name VARCHAR2(50)
+);
+
+CREATE TABLE activities (
+    activity_id NUMBER,
+    activity_name VARCHAR2(50),
+    pet_id NUMBER
+);
+
+INSERT INTO pets VALUES (1, 'Blackie');
+INSERT INTO pets VALUES (2, 'Rocky');
+INSERT INTO pets VALUES (3, 'Smiley');
+
+INSERT INTO activities VALUES (1, 'Fetch', 1);
+INSERT INTO activities VALUES (2, 'Climb', 2);
+INSERT INTO activities VALUES (3, 'Bark', 1);
+INSERT INTO activities VALUES (4, 'Pounce', 2);
+INSERT INTO activities VALUES (5, 'Run', 3);
+
+SELECT pets.pet_name, activities.activity_name
+FROM pets
+JOIN activities ON pets.pet_id = activities.pet_id;
+
+
