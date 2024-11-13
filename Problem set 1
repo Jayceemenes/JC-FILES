@@ -1,5 +1,4 @@
 PROBLEM SET 1:
-
 CREATE TABLE Adopters (   
     adopter_id INT PRIMARY KEY,   
     adopter_name VARCHAR(250),   
