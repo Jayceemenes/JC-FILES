@@ -1,0 +1,44 @@
+PROBLEM SET 1:
+
+CREATE TABLE Adopters (   
+    adopter_id INT PRIMARY KEY,   
+    adopter_name VARCHAR(250),   
+    email VARCHAR(250),   
+    phone VARCHAR(15)  
+)
+
+INSERT INTO Adopters (adopter_id, adopter_name, email, phone) VALUES 
+(1, 'Aliyah Vien', 'aliyah@gmail.com', '555-1234')
+
+INSERT INTO Adopters (adopter_id, adopter_name, email, phone) VALUES     
+(2, 'Sofia Smith', 'sofia@gmail.com', '555-5678')
+
+INSERT INTO Adopters (adopter_id, adopter_name, email, phone) VALUES     
+(3, 'Kaisha Apuli', 'kai@gmail.com', '555-9101')
+
+
+CREATE TABLE Pets (   
+    pet_id NUMBER PRIMARY KEY,   
+    name VARCHAR(255),   
+    species VARCHAR(50), 
+    breed VARCHAR(50), 
+    adopter_id NUMBER,   
+    adoption_date NUMBER,  
+    FOREIGN KEY (adopter_id) REFERENCES Adopters(adopter_id)   
+)
+
+
+INSERT INTO Pets (pet_id, name, species, breed, adopter_id, adoption_date) VALUES 
+(1, 'Blackie', 'Dog', 'Golden Retriever', 1, 2023-10-01)
+
+INSERT INTO Pets (pet_id, name, species, breed, adopter_id, adoption_date) VALUES 
+(2, 'Smiley', 'Cat', 'Siamese', 2, 2023-10-15)
+
+INSERT INTO Pets (pet_id, name, species, breed, adopter_id, adoption_date) VALUES 
+(3, 'Max', 'Dog', 'Beagle', 1, 2024-05-05)
+
+
+REFLECTION:
+Foreign keys and unique constraints ensure data integrity in the database. 
+The foreign key in the Pets table links each pet to a valid adopter, while the unique constraint on email in the Adopters table prevents duplicate entries.
+ Together, they enhance data accuracy and reliability for the pet adoption agency.
