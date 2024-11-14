@@ -1,0 +1,15 @@
+PROBLEM SET 2:
+ALTER TABLE Adopters 
+ADD COLUMN adoption_date NUMBER
+
+ALTER TABLE Pets 
+ADD COLUMN has_vaccinations BOOLEAN VARCHAR(50);
+
+ALTER TABLE Adopters 
+ADD CONSTRAINT unique_email
+UNIQUE (email);
+
+REFLECTION:
+The unique constraint on the email column ensures no two adopters share the same email, preventing duplicates and confusion.
+This enhances data accuracy and usability, allowing for reliable communication and efficient management of adopter records,
+ultimately fostering trust in the adoption process.
