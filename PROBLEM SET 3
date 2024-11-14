@@ -1,0 +1,8 @@
+PROBLEM SET 3:
+ORA-00001: unique constraint (SQL_RXZURTOUCPVTMERCVXFAEUIVL.SYS_C00173190579)
+violated ORA-06512: at "SYS.DBMS_SQL", line 1721
+
+REFLECTION:
+This error indicates a duplicate entry for the email column, violating the unique constraint. 
+Unique constraints ensure all values are distinct, and the database enforces this during inserts and updates. 
+In the pet adoption scenario, this prevents confusion and maintains accurate records, fostering trust and efficiency.
