@@ -1,0 +1,9 @@
+PROBLEM SET 4:
+DELETE FROM Pets
+WHERE species = 'Dog';
+
+DROP TABLE Pets
+CASCADE CONSTRAINTS;
+
+REFLECTION:
+CASCADE CONSTRAINTS ensure that when a table is deleted, all related records in other tables are also removed. 
