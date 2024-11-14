@@ -1,0 +1,23 @@
+PROBLEM SET 5:
+CREATE TABLE Chefs (
+    chef_id NUMBER PRIMARY KEY,
+    chef_name VARCHAR(100),
+    email VARCHAR(100) UNIQUE
+);
+
+CREATE TABLE Recipes (
+    recipe_id NUMBER PRIMARY KEY,
+    recipe_name VARCHAR(100) UNIQUE,
+    chef_id NUMBER,
+    cooking_time NUMBER,
+    FOREIGN KEY (chef_id) REFERENCES Chefs(chef_id)
+);
+
+
+ALTER TABLE Recipes  
+ADD difficulty_level VARCHAR(50)
+
+
+REFLECTION:
+Unique constraints and foreign keys enhance the accuracy and reliability of the database. Unique constraints prevent duplicates,
+ensuring each chef and recipe is distinct, while foreign keys maintain referential integrity between tables.
